@@ -1,3 +1,0 @@
-"""
-It is strange file
-"""
