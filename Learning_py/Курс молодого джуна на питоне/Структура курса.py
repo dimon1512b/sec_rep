@@ -22,13 +22,11 @@
 	Ты неправильно замеряешь время в Python! Или нет? - YouTube
 
 	Git. Большой практический выпуск - YouTube
-	Git уроки - YouTube
-	Базовый курс по Git - YouTube
 
-	Поднимаем Debian сервер для Python/Django — установка и настройка с нуля. Как настроить сервер? - YouTube
+Поднимаем Debian сервер для Python/Django — установка и настройка с нуля. Как настроить сервер? - YouTube
 	Apache против Nginx. Apache есть место в 2019м? Сравнение двух лидирующих HTTP серверов - YouTube
-	Nginx без downtime на продакшн системе / Nginx hot reload - YouTube
-	Как получить и настроить LetsEncrypt SSL сертификат для сайта? - YouTube
+Nginx без downtime на продакшн системе / Nginx hot reload - YouTube
+Как получить и настроить LetsEncrypt SSL сертификат для сайта? - YouTube
 	Настраиваем авторизацию SSH по ключу в Linux / Unix - YouTube
 
 	Графика для веба, которую все используют неправильно. Про JPG/PNG, WebP и SVG, а также мощь HTML5 - YouTube
@@ -49,7 +47,7 @@
 
 Почему тебе нужен PgBouncer, как его установить? Оптимизируем веб-приложения с PostgreSQL - YouTube
 Обработка и отслеживание ошибок и исключений в Django - YouTube
-Логирование в Python и Django - YouTube
+	Логирование в Python и Django - YouTube
 Django Middleware — что это, зачем и как использовать - YouTube
 Многопроцессность, многопоточность, асинхронность в Python и не только. Что это и как работает? - YouTube
 Асинхронный Python-код медленнее обычного кода! Ааа!!1один. Aiohttp VS синхронные фреймворки - YouTube

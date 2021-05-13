@@ -1,0 +1,6 @@
+import logging_configuration
+import logging.config
+logging.config.dictConfig(logging_configuration.LOGGING)
+logger = logging.getLogger('logger_conf_1')
+
+logger.info(f'info from LOG___1')
