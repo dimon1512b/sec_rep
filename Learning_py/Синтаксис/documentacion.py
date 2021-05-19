@@ -8,7 +8,7 @@
 - Запустить вирт окруж файлом который находится в
 \деректория проекта\myenv(Это название виртуального окружегния)\Scripts\activate.bat
 
-- Нужно использовать requirements.txt для установки всех зависимостей в проекте python pip freeze > requirements.txt
+	- Нужно использовать requirements.txt для установки всех зависимостей в проекте python pip freeze > requirements.txt
 
 1. Установить питон
 
