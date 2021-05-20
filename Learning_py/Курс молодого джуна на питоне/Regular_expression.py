@@ -37,4 +37,13 @@ a href="https://stepic.org/media/attachments/lesson/24472/sample0.html"
 
 
 () - в круглых скобках идет групировка выражений и исползоваться будет либо то либо это
+
+
+a = 'ldfsdsdl99999999'
+
+b = re.search(r'\d{8}', a)
+
+print(type(b)) # <class 're.Match'>
+print(type(b.group(0)))	# <class 'str'>
+print(b.group(0)) # 99999999
 '''
