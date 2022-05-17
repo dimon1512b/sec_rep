@@ -1,9 +1,12 @@
-import re
 
-a = 'ldfsdsdl99999999'
+class Test:
+    def __init__(self):
+        print('we in init')
+        self._first()
 
-b = re.search(r'\d{8}', a)
+    def __first(self):
+        print('we in first')
 
-print(type(b)) # <class 're.Match'>
-print(type(b.group(0)))	# <class 'str'>
-print(b.group(0)) # 99999999
+
+a = Test()
+a.__first()
