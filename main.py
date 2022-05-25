@@ -1,12 +1,9 @@
+v1 = []
 
-class Test:
-    def __init__(self):
-        print('we in init')
-        self._first()
+def incr():
+    # v1.append(1)
+    print(v1)
 
-    def __first(self):
-        print('we in first')
+incr()
 
-
-a = Test()
-a.__first()
+print(v1)
