@@ -1,3 +1,8 @@
+let newChange;
+console.log('Hi, thi is my first change in remote project!');
+
+
+
 // Variables
 /*
 Як я вже писав - той мінімальний набор він власне мінімальний тільки для junior frontend developer, а для верстальника той набор то перебор. Серед тих пунктів мінімум для верстальника це:
