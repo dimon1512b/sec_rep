@@ -1,7 +1,7 @@
 let newChange;
 console.log('Hi, thi is my first change in remote project!');
 
-
+let change2; // second changes 
 
 // Variables
 /*
