@@ -20,31 +20,31 @@ size = {
 size_to_str = f'{size["width"]}/{size["height"]}'
 url = f'https://loremflickr.com/{size_to_str}'
 
-# if not os.path.exists('images'):
-#     os.mkdir('images')
+if not os.path.exists('images'):
+    os.mkdir('images')
 
 
-# async def download_image(link, session, num):
-#     async with session.get(link) as resp:
-#         if resp.status == 200:
-#             file_name = f'{size_to_str.replace("/", "x")}_{num}.jpg'
-#             folder = os.path.join('images', file_name)
-#             f = await aiofiles.open(folder, mode='wb')
-#             await f.write(await resp.read())
-#             await f.close()
-#             print(f'{file_name} ready')
-#
-#
-# async def main(link, amount):
-#     print('START DOWNLOADING')
-#     start = time.monotonic()
-#     async with aiohttp.ClientSession() as session:
-#         tasks = []
-#         for i in range(amount):
-#             task = asyncio.create_task(download_image(link, session, i + 1))
-#             tasks.append(task)
-#         await asyncio.gather(*tasks)
-#         print(f'FINISH DOWNLOADING - {time.monotonic() - start} sec')
+async def download_image(link, session, num):
+    async with session.get(link) as resp:
+        if resp.status == 200:
+            file_name = f'{size_to_str.replace("/", "x")}_{num}.jpg'
+            folder = os.path.join('images', file_name)
+            f = await aiofiles.open(folder, mode='wb')
+            await f.write(await resp.read())
+            await f.close()
+            print(f'{file_name} ready')
+
+
+async def main(link, amount):
+    print('START DOWNLOADING')
+    start = time.monotonic()
+    async with aiohttp.ClientSession() as session:
+        tasks = []
+        for i in range(amount):
+            task = asyncio.create_task(download_image(link, session, i + 1))
+            tasks.append(task)
+        await asyncio.gather(*tasks)
+        print(f'FINISH DOWNLOADING - {time.monotonic() - start} sec')
 
 
 async def a_def_1():
@@ -59,7 +59,9 @@ async def a_def_3():
     pass
 
 
-if __name__ == '__main__':
-    # asyncio.run(main(url, amount_images))
-    pass
+def run_as_imported():
+    asyncio.run(main(url, amount_images))
 
+
+if __name__ == '__main__':
+    asyncio.run(main(url, amount_images))

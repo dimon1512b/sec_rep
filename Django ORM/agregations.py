@@ -21,8 +21,22 @@ Group by
 Article.objects.values('cat').annotate(Count('id'))
 #  SELECT count(id) FROM article GROUP BY cat
 
-Настпний запрос поверне кількість записів по кожній категорії
+Наступний запрос поверне кількість записів по кожній категорії
 
 Тому що метод values працює дещо інакше якщо він у поєднанні з методом
 annotate
+
+coll_orders = CollectionOrder.objects.filter(
+    Q(closed_at__isnull=False) &
+    (Q(collection_order_template__waste_stream__disposer=relation.id) |
+    Q(collection_order_template__waste_stream__sender=relation.id))
+)
+
+coll_groups = coll_orders.values(
+    'collection_order_template__collection_waste_group_id',
+).annotate(
+    group_id=F('collection_order_template__collection_waste_group_id'),
+    count=Count('collection_order_template__collection_waste_group_id')
+).values_list('group_id', flat=True)
+
 """
