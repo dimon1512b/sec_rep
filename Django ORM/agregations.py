@@ -18,8 +18,8 @@ Group by
 
 Можна виконати агрегації для груп данних. Наприклад:
 
-Article.objects.values('cat').annotate(Count('id'))
-#  SELECT count(id) FROM article GROUP BY cat
+Article.objects.values('category').annotate(Count('id'))
+#  SELECT count(id) FROM article GROUP BY category
 
 Наступний запрос поверне кількість записів по кожній категорії
 
@@ -38,5 +38,28 @@ coll_groups = coll_orders.values(
     group_id=F('collection_order_template__collection_waste_group_id'),
     count=Count('collection_order_template__collection_waste_group_id')
 ).values_list('group_id', flat=True)
+
+##############################################################################
+
+annotate() adds an extra attribute to each object in the queryset,
+containing the result of the aggregation.
+
+# Annotate each product with the total quantity sold
+products = Product.objects.annotate(total_quantity_sold=Sum('sales__quantity'))
+# each product object in this queryset will contain total_quantity_sold
+
+Returns Queryset:
+
+##############################################################################
+
+aggregate() computes a single result for the entire queryset,
+based on the aggregation function specified.
+
+# Calculate the total quantity sold across all products
+total_quantity_sold = Product.objects.aggregate(
+    total_quantity_sold=Sum('sales__quantity'),
+)
+
+Returns Dictionary:
 
 """

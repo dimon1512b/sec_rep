@@ -124,7 +124,7 @@ def table2(func): #новый декоратор
     inner.__name__ = func.__name__
     inner.__doc__ = func.__doc__
     return inner
-@table2 # задекорировали нашу функцию - это раносильно sqr = table2(sqr)
+@table2 # задекорировали нашу функцию - это равносильно sqr = table2(sqr)
 def sqr(x):
     '''
     Возводим х в квадрат
@@ -164,7 +164,7 @@ class A():
         del self.__balance
 exemp1 = A('Ivan', 200)
 exemp1.my_balance #>>> Will be getter
-exemp1.my_balance = #n# >>> Will be setter
+exemp1.my_balance = 123#n# >>> Will be setter
 #del exemp1.my_balance >>> Will be deleter
 
 '''staticmethod and classmethod '''
@@ -185,3 +185,20 @@ class Example:
         print(f'class_hello {cls}') # >>> Вызывается от класса и принимает в качевстве аргумента сам класс
                                     # >>> Даже если вызвать от экземпляра то в аргумент всеравно прилетит сам класс
 
+
+#  Decorators can take params:
+
+def my_dec_with_params(parameter):
+    def decorator(func):
+        def inner(*args, **kwargs):
+            # code before func
+            print(f"{parameter = }")  # can use "parameter" anywhere
+            func(*args, **kwargs)
+            # code after func
+        return inner
+    return decorator
+
+
+@my_dec_with_params(parameter="param1")
+def main():
+    print("def main")
